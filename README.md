@@ -20,17 +20,30 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Commands I used for configuration of CI/CD in this project.
 
-To learn more about Next.js, take a look at the following resources:
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npm install --save-dev husky lint-staged
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![image](https://github.com/vaibhavmalhotra002/Nextjs14cicd/assets/76607940/b71e89cf-f33e-4e3e-86fe-bf03d6cf87d5)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+git init  (initalize git repository)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+npx husky-init && npm install
+npm install husky --save-dev
+npx husky install
+
+
+npx husky add .husky/pre-commit "npx lint-staged"
+
+npm install --save-dev @commitlint/{cli,config-conventional} (To keep a check & apply rules for commit messages)
+
+npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"' 
+
+Now create commitlint.config.cjs for applying rules for writing commit messages
+<img width="1440" alt="Screenshot 2024-03-16 at 3 33 33 PM" src="https://github.com/vaibhavmalhotra002/Nextjs14cicd/assets/76607940/9c87bd51-a954-4916-8f9a-0e359f6eb1f6">
+
+
+// adding this will create static site for next.js 14 for GitHub pages const nextConfig = { output: 'export’}
