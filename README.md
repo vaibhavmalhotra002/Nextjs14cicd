@@ -20,17 +20,18 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Commands I used for configuration of CI/CD in this project.
 
-To learn more about Next.js, take a look at the following resources:
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npm install --save-dev husky lint-staged
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+git init
+npx husky install
+npx husky add .husky/pre-commit "npx lint-staged"
 
-## Deploy on Vercel
+npm install --save-dev @commitlint/{cli,config-conventional}
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'  Now create commitlint.config.cjs
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+// adding this will create static site for next.js 14 for GitHub pages const nextConfig = { output: 'export’}
